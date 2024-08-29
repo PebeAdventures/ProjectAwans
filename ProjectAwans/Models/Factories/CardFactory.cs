@@ -5,18 +5,7 @@ namespace ProjectAwans.Models.Factories
 {
    public class CardFactory : ICardFactory
    {
-      public Card CreateCard(
-          string name,
-          int cost,
-          int power,
-          AttackTypeEnum attackType,
-          CardTypeEnum cardType,
-          string description,
-          AbilityActivationEnum ability,
-          CardColor cardColor,
-          int counter,
-          TraitEnum[] traits,
-          string cardNumber)
+      public Card CreateCard(string name, int cost, int power, List<AttackTypeEnum> attackType, CardTypeEnum cardType, string description, List<AbilityActivationEnum> ability, CardColor cardColor, int counter, List<TraitEnum> traits, string cardNumber)
       {
          return new Card
          {
@@ -24,10 +13,10 @@ namespace ProjectAwans.Models.Factories
             Name = name,
             Cost = cost,
             Power = power,
-            AttackTypes = new List<AttackTypeEnum> { attackType }, 
+            AttackTypes = attackType,
             Type = cardType,
             Description = description,
-            Abilities = new List<AbilityActivationEnum> { ability },
+            Abilities = ability,
             CardColorId = cardColor.Id,  // assign cardID
             CardColor = cardColor,       // assign color object
             Counter = counter,

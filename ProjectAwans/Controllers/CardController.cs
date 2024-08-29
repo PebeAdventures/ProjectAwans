@@ -39,10 +39,10 @@ namespace ProjektAwans.Controllers
       }
 
       [HttpPost("generate-random")]
-      public async Task<ActionResult<Card>> GenerateRandomCard()
+      public async Task<ActionResult<CreateCardDto>> GenerateRandomCard()
       {
          var card = await _cardService.GenerateRandomCardAsync();
-         return CreatedAtAction(nameof(GenerateRandomCard), new { id = card.Id }, card);
+         return CreatedAtAction(nameof(GenerateRandomCard), card);
       }
    }
 }

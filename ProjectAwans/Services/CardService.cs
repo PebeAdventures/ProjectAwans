@@ -63,7 +63,7 @@ namespace ProjectAwans.Services
 
          return newCard;
       }
-      public async Task<Card> GenerateRandomCardAsync()
+      public async Task<CreateCardDto> GenerateRandomCardAsync()
       {
          // Lista nazw do wyboru
          var names = GetCardNames();
@@ -176,7 +176,7 @@ namespace ProjectAwans.Services
          // Mapowanie karty na DTO
          var cardDto = new CreateCardDto
          {
-            Id = card.Id,
+            //Id = card.Id,
             Name = card.Name,
             Cost = card.Cost,
             Power = card.Power,
@@ -186,9 +186,9 @@ namespace ProjectAwans.Services
                Name = card.CardColor.Name
             },
             Description = card.Description,
-            AttackTypes = card.AttackTypes,
-            Type = card.Type,
-            Abilities = card.Abilities,
+            AttackType = card.AttackTypes,
+            CardType = card.Type,
+            Ability = card.Abilities,
             Counter = card.Counter,
             Traits = card.Traits,
             CardNumber = card.CardNumber

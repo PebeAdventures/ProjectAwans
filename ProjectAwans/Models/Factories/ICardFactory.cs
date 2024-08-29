@@ -9,13 +9,13 @@ namespace ProjectAwans.Models.Factories
           string name,
           int cost,
           int power,
-          AttackTypeEnum attackType,
+          List<AttackTypeEnum> attackType,
           CardTypeEnum cardType,
           string description,
-          AbilityActivationEnum ability,
+          List<AbilityActivationEnum> ability,
           CardColor cardColor,
           int counter,
-          TraitEnum[] traits,
+          List<TraitEnum> traits,
           string cardNumber);
    }
 }
